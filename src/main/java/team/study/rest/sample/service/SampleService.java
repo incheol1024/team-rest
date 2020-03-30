@@ -12,7 +12,11 @@ public class SampleService {
     RestTemplate restTemplate;
 
 
-    public SampleDto findSample(SampleDto sampleDto) {
-        return restTemplate.getForObject("/url", SampleDto.class);
+    public SampleDto findSample(String id) {
+        SampleDto sampleDto = new SampleDto();
+        sampleDto.setName(id);
+        sampleDto.setAge(20);
+        return sampleDto;
+//        return restTemplate.getForObject("/url", SampleDto.class);
     }
 }
