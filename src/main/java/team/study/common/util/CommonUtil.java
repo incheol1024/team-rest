@@ -1,4 +1,4 @@
 package team.study.common.util;
 
-public class CommonUtil {
+public final class CommonUtil {
 }
