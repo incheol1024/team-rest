@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.test.web.servlet.MockMvc;
 import team.study.rest.sample.service.impl.CovidService;
+import team.study.rest.sample.service.impl.CovidServiceImpl;
 
 import java.io.IOException;
 
@@ -40,7 +41,6 @@ class SampleControllerTest {
 
     @Test
     void findInternalCount() throws IOException {
-
         covidService.getInternalStatus("seoul");
         System.out.println();
         assertThat("0").isEqualTo("0");

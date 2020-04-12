@@ -2,7 +2,9 @@ package team.study.rest.sample.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,6 +21,7 @@ import java.net.*;
 public class CovidServiceImpl implements CovidService{
     private final String INTERNAL_PATIENT_COUNT = "https://api.dropper.tech/covid19/status/korea";
     private final String API_KEY = "e555afa30c86ef0e869e9a0e62425f5ebdf4d3a82c8f40cedc18643b206ab553";
+
 
     // 국내 환자 수 요청
     @Override
