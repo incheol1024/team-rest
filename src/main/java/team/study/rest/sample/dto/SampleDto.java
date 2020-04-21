@@ -1,14 +1,20 @@
 package team.study.rest.sample.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@Data
+
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@RedisHash("SampleDTO")
 public class SampleDto {
 
+    @Id
     private String name;
 
     private int age;
