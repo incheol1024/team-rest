@@ -4,15 +4,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import team.study.rest.sample.dto.SampleDto;
+import team.study.rest.sample.repository.HibernateRepository;
 
 @SpringBootTest
-public class SampleRepositoryTests {
+public class HibernateRepositoryTests {
 
     @Autowired
-    private SampleRepository sampleRepository;
+    private HibernateRepository hibernateRepository;
 
     @Test
     public void saveTest() {
-        sampleRepository.save(SampleDto.builder().name("홍길동").age(20).build());
+        hibernateRepository.save(SampleDto.builder().name("홍길동").age(20).build());
     }
 }
