@@ -8,8 +8,10 @@ import team.study.rest.sample.dto.SampleDto;
 @Service
 public class SampleService {
 
-    @Autowired
+/*
+        @Autowired
     RestTemplate restTemplate;
+*/
 
 
     public SampleDto findSample(String id) {

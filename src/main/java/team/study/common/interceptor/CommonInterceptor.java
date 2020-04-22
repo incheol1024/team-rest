@@ -12,6 +12,7 @@ public class CommonInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        log.info("{}", request.getRequestURI());
         System.out.println("preHandle");
         return true;
     }
