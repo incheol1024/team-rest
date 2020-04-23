@@ -4,9 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import team.study.rest.sample.dto.SampleCache;
-import team.study.rest.sample.dto.SampleDto;
 import team.study.rest.sample.repository.CacheRepository;
-import team.study.rest.sample.repository.SampleCacheRepository;
 
 @SpringBootTest
 public class CacheRepositoryTests {
