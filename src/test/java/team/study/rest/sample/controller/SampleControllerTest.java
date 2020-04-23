@@ -1,19 +1,19 @@
 package team.study.rest.sample.controller;
 
-import org.hamcrest.Matcher;
-import org.hamcrest.core.Is;
 import org.hamcrest.core.IsEqual;
-import org.hamcrest.core.IsSame;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import team.study.rest.sample.service.impl.CovidService;
+import team.study.rest.sample.service.impl.CovidServiceImpl;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.io.IOException;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -25,6 +25,8 @@ class SampleControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    @Autowired
+    private CovidService covidService;
 
     @Test
     void findSample() throws Exception {
@@ -35,5 +37,12 @@ class SampleControllerTest {
                 .andExpect(jsonPath("$.name", IsEqual.equalTo("test")))
                 .andExpect(jsonPath("$.age", IsEqual.equalTo(20)))
         ;
+    }
+
+    @Test
+    void findInternalCount() throws IOException {
+        covidService.getInternalStatus("seoul");
+        System.out.println();
+        assertThat("0").isEqualTo("0");
     }
 }
