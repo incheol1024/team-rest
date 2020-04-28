@@ -26,8 +26,8 @@ spring:
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
       jdbc-url: jdbc:mysql://jarvis1.clzkjwwf2qt9.ap-northeast-2.rds.amazonaws.com/team_rest?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-      username: etoos
-      password: ets1234
+      username:
+      password:
     initialization-mode: always
     schema: classpath:sql/schema.sql
 
