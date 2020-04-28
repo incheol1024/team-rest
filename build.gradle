@@ -42,9 +42,7 @@ dependencies {
     }
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.5.0'
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.5.0'
-
-
-
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.12'
 }
 
 test {

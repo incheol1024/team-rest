@@ -3,12 +3,10 @@ package team.study.rest.sample.controller;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.converter.json.GsonHttpMessageConverter;
 import org.springframework.test.web.servlet.MockMvc;
-import team.study.rest.sample.service.impl.CovidService;
+import team.study.rest.sample.service.CovidService;
 
 import java.io.IOException;
 
