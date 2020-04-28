@@ -1,43 +1,39 @@
+spring:
+  profiles:
+    active: dev
+
+---
 server:
   port: 8080
 
-spring:
-  profiles:
-    active: local
----
 logging:
   level:
     root: info
 
 spring:
-  profiles: local
+  profiles: dev
 
   jpa:
     open-in-view: false
+    show-sql: true
     hibernate:
       ddl-auto: update
-    show-sql: true
     properties:
       hibernate:
         format_sql: true
 
-    h2:
-      console:
-        enabled: true
-
-#    datasource:
-#      driver-class-name: org.h2.Driver
-#      url: jdbc:h2:mem:test
-#      data-username: sa
-#      data-password: null
-
-    datasource:
-      url: jdbc:postgresql://localhost:5432/team_rest
-      data-username: postgres
-      data-password: 1234
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://jarvis1.clzkjwwf2qt9.ap-northeast-2.rds.amazonaws.com/team_rest?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+      username: etoos
+      password: ets1234
+    initialization-mode: always
+    schema: classpath:sql/schema.sql
 
   cache:
     type: redis
+
   redis:
     port: 6379
     host: localhost
