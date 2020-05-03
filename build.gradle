@@ -48,7 +48,8 @@ dependencies {
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.5.0'
 
     compile group: 'it.ozimov', name: 'embedded-redis', version: '0.7.2'
-
+    // java bind xml
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
 }
 
 test {
