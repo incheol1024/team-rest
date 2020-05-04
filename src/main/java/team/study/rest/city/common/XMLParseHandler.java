@@ -19,9 +19,9 @@ public class XMLParseHandler implements ParseHandler{
     // parse 과정에서 CityCovidDTO는 변하는 부분임
     // return 값 또한 변해야함.
     @Override
-    public List<?> parse(RestTemplate restTemplate, String uri) {
-        object = restTemplate.getForObject(uri, CityCovidDTO.class);
-        //return this.object.getCityStatus();
+    public List parse(String uri) {
+//        object = restTemplate.getForObject(uri, CityCovidDTO.class);
+//        //return this.object.getCityStatus();
         return null;
     }
 }

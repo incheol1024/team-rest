@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import team.study.rest.city.dto.CityCovidResponse;
 
 @Repository
-public interface CityCovidRepository extends JpaRepository<CityCovidResponse, String> {
+public interface CityCovidRepository {
 
 }

@@ -40,6 +40,15 @@ class SampleControllerTest {
     }
 
     @Test
+    void findCityAPI() throws Exception {
+        this.mockMvc
+                .perform(get("/city/list"))
+                .andDo(print())
+                .andExpect(status().isOk())
+        ;
+    }
+
+    @Test
     void findInternalCount() throws IOException {
         covidService.getInternalStatus("seoul");
         System.out.println();
