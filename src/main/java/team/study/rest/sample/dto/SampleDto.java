@@ -1,14 +1,22 @@
 package team.study.rest.sample.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.data.redis.core.RedisHash;
 
-@Data
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Entity
+@Table(name = "tbl_sample")
 public class SampleDto {
 
+    @Id
     private String name;
 
     private int age;
