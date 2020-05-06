@@ -10,9 +10,12 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@Getter
+/**
+ * 시도별 코로나 현황 API Response
+ */
 @Setter
 @ApiModel
+// XML item name을 Root Element로 지정
 @XmlRootElement(name = "item")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CityCovidResponse {

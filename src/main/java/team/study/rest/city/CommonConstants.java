@@ -3,7 +3,7 @@ package team.study.rest.city;
 public class CommonConstants {
 
     // Secret Key
-    public final static String KEY = "LDmV+2q/DjE446xxXV3ORVRWpYdPlxQ8LUax05DDKssyTQ46+Z6umCF2h6h5VEIUs8cZbvWpvm8lrGDMC0XzWw==";
+    public final static String KEY = "Pg505PSmcYhOgevQgu1I0nFKOvGqYml2o68imNrQoaqBfcv1g/VpIkHZssTJb00xoAEsb5LM4iwXTpyoZJTvuQ==";
     // 공공데이터 API END POINT
     public final static String END_POINT = "http://openapi.data.go.kr/openapi/service/rest/Covid19";
     // 시도별 코로나발병현황 Param

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import team.study.rest.city.dto.CityCovidRequest;
 import team.study.rest.city.dto.CityCovidResponse;
 import team.study.rest.city.service.CityCovidService;
-import team.study.rest.city.service.impl.CityCovidServiceImpl;
 
 import java.util.List;
 
@@ -26,6 +25,8 @@ public class CityCovidController {
         return  1;
     }
 
+    // 시도별 코로나 현황 목록 조회
+    // Get Method로 Http 요청
     @GetMapping("/list")
     public List<CityCovidResponse> getCityStatus() {
         return this.cityCovidService.getCityStatus();

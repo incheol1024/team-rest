@@ -4,6 +4,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Setter;
 
+/**
+ * 시도별 코로나현황 API 요청 Model
+ */
 @Setter
 @ApiModel
 public class CityCovidRequest {

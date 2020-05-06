@@ -1,6 +1,7 @@
 package team.study.rest.city.common;
 
-public interface APIHandler {
+import java.net.URI;
 
-    String requestData();
+public interface APIHandler {
+    URI requestData();
 }
