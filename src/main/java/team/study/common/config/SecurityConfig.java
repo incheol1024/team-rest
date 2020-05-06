@@ -1,9 +1,12 @@
 package team.study.common.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.oauth2.client.registration.ClientRegistration;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import org.springframework.security.oauth2.client.registration.InMemoryClientRegistrationRepository;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -11,26 +14,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**").permitAll();
-
-        http.csrf().disable();
-
-        http.httpBasic().disable()
-        .formLogin()
-        .disable();
-
-        http.cors()
+                .antMatchers("/login", "/oauth2/**", "/").permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                ;
+                .oauth2Login();
+    }
 
-/*
-        http.oauth2ResourceServer()
-                .jwt()
-                .jwkSetUri("http://localhost:8080")
-                ;
-*/
+    @Bean
+    public ClientRegistrationRepository clientRegistrationRepository() {
+        ClientRegistration builder =
+                ClientRegistration.withRegistrationId("id")
+                .clientId("id")
+                .scope()
+                .tokenUri("uri")
+                .build();
 
+        return new InMemoryClientRegistrationRepository(builder);
     }
 }

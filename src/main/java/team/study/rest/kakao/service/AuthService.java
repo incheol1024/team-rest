@@ -36,29 +36,6 @@ public class AuthService {
     private final KakaoProperties kakaoProperties;
 
 
-    public HttpEntity<String> kakaoAuth() {
-        String url = "https://kauth.kakao.com/oauth/authorize";
-
-        HttpHeaders headers = new HttpHeaders();
-//        headers.set("Co", MediaType.APPLICATION_JSON_VALUE);
-
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(url)
-                .queryParam("client_id", "{b83d6b24bfbd985bd873b8988bfba8d3}")
-                .queryParam("redirect_uri", "{/}")
-                .queryParam("response_type", "code");
-
-        HttpEntity<?> entity = new HttpEntity<>(headers);
-
-/*        HttpEntity<String> response = restTemplate.exchange(
-                builder.toUriString(),
-                HttpMethod.GET,
-                entity,
-                String.class);*/
-
-//        return response;
-        return null;
-    }
-
 
     public ResponseEntity<UserTokenResponseDto> getUserToken(String code) {
         restTemplate.getMessageConverters().stream().forEach(System.out::println);

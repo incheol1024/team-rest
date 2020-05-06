@@ -16,9 +16,4 @@ public class AuthController {
     @Autowired
     AuthService authService;
 
-    @GetMapping("/authorize")
-    public HttpEntity<String> auth() {
-      log.info("auth");
-       return authService.kakaoAuth();
-    }
 }
