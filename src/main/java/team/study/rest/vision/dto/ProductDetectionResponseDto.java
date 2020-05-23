@@ -33,7 +33,7 @@ public class ProductDetectionResponseDto {
 
         private int y2;
 
-        private String Class;
+        private String cl;
 
     }
 }
