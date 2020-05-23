@@ -20,8 +20,10 @@ public class SampleController {
 
     private final HibernateRepository hibernateRepository;
 
+/*
     @GetMapping("")
     public ResponseEntity<SampleDto> findSample(SampleDto sampleDto) {
         return ResponseEntity.ok(hibernateRepository.save(sampleDto));
     }
+*/
 }
