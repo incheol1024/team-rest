@@ -19,6 +19,8 @@ public class Product {
 
     private String productName;
 
+    private String productDetailName;
+
     private int productType;
 
     @ManyToOne

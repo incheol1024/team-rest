@@ -33,4 +33,8 @@ public class ProductVisionController {
     public Image analysisImage(MultipartFile multipartFile) {
         return visionDetectService.analysisImage(multipartFile);
     }
+
+
+
+
 }
