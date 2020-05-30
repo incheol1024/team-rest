@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "tlb_sample")
+@Table(name = "tbl_sample")
 public class SampleDto {
 
     @Id
