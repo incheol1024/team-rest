@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/search")
 @Api("네이버 쇼핑 상품 목록을 조회")
-public class NaverShoppingSearchController {
+public class NaverShoppingController {
 
 
     @GetMapping("/shopping/{id}")
