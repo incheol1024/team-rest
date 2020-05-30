@@ -1,4 +1,4 @@
-package team.study.common.provider.naver;
+package team.study.common.provider.naver.shopping;
 
 public class NaverShoppingSearchProvider implements NaverSearchProvider <ShoppingSearchRequestDto, ShoppingSearchResultDto> {
 

@@ -1,4 +1,4 @@
-package team.study.common.provider.naver;
+package team.study.common.provider.naver.shopping;
 
 import lombok.Data;
 
@@ -21,4 +21,24 @@ public class ShoppingSearchResultDto {
     private int hprice;//	integer	최고가 정보이다. 최고가 정보가 없거나 가격비교 데이터가 없는 경우 0으로 표시된다.
     private String mallName; //	string	상품을 판매하는 쇼핑몰의 상호이다. 정보가 없을 경우 네이버로 표기된다.
     private int productId; //	integer	해당 상품에 대한 ID 이다.
+
+    @Data
+    public static class Item {
+
+        /**
+         * 상품군 정보를 일반상품, 중고상품, 단종상품, 판매예정상품으로 구분한다. 상품군의 종류는 다음과 같다.
+         * 일반상품
+         * 중고상품
+         * 단종상품
+         * 판매예정상품
+         */
+        private int productType; //
+        private String maker; //	string	해당 상품의 제조사 명이다.
+        private String brand; //	string	해당 상품의 브랜드 명이다.
+        private String category1; //	string	해당 상품의 카테고리, 대분류이다.
+        private String category2; //	string	해당 상품의 카테고리, 중분류이다.
+        private String category3l; //	string	해당 상품의 카테고리, 소분류이다.
+        private String category4; //	string	해당 상품의 카테고리, 세분류이다.
+
+    }
 }
