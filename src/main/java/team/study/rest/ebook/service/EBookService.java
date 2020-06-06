@@ -14,4 +14,6 @@ public interface EBookService {
     boolean pdfToMp3(MultipartFile multipartFile);
 
     List<EBookDto> getList(int page);
+
+    byte[] getMp3(long no);
 }

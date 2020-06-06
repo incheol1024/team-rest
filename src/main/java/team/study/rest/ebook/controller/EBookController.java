@@ -17,6 +17,11 @@ public class EBookController {
 
     private final EBookService eBookService;
 
+    @GetMapping("/play/{no}")
+    public ResponseEntity<byte[]> playMp3(@PathVariable("no") long no) {
+        return ResponseEntity.ok(eBookService.getMp3(no));
+    }
+
     @GetMapping("/list/{page}")
     public ResponseEntity<List<EBookDto>> getList(@PathVariable("page") int page) {
         return ResponseEntity.ok(eBookService.getList(page));
