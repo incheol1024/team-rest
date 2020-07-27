@@ -9,4 +9,5 @@ public final class ModelMapperUtil {
        ModelMapper modelMapper = new ModelMapper();
        return modelMapper.map(sourceObject, destinationType);
     }
+
 }
